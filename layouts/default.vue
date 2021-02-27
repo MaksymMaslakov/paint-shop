@@ -1,22 +1,22 @@
 <template>
   <v-app>
-    <!-- <v-navigation-drawer /> -->
-    <navbar app />
+    <the-topbar />
     <v-main>
       <v-container>
         <nuxt />
       </v-container>
+      <v-footer primary>
+        <v-icon>mdi-home</v-icon>
+      </v-footer>
     </v-main>
-
-    <v-footer />
   </v-app>
 </template>
 
 <script>
-import Navbar from '~/components/Navbar.vue'
+import TheTopbar from '~/components/TheTopbar.vue'
 export default {
   components: {
-    Navbar
+    TheTopbar
   }
 }
 </script>
