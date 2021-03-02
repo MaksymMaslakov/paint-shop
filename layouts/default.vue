@@ -5,7 +5,7 @@
       <v-container>
         <nuxt />
       </v-container>
-      <v-footer primary>
+      <v-footer primary absolute>
         <v-icon>mdi-home</v-icon>
       </v-footer>
     </v-main>

@@ -1,13 +1,24 @@
 <template>
-  <v-container>
-    <v-row>
-      <product-item
+  <v-list class="productList">
+    <v-list-item-group
+      v-model="selectedItem"
+      color="primary"
+    >
+      <v-list-item
         v-for="product in products"
         :key="product.id"
-        :item="product"
-      />
-    </v-row>
-  </v-container>
+        class="productList__item"
+      >
+        <v-list-item-icon class="productList__item__icon">
+          <v-img :src="product.imgUrl" height="100" width="100" />
+        </v-list-item-icon>
+        <v-list-item-content>
+          <v-list-item-title v-text="product.title" />
+          <v-list-item-subtitle v-text="product.title" />
+        </v-list-item-content>
+      </v-list-item>
+    </v-list-item-group>
+  </v-list>
 </template>
 
 <script>
@@ -98,3 +109,19 @@ export default {
   })
 }
 </script>
+
+<style lang="scss" scoped>
+.productList {
+  padding-top: 0;
+
+  &__item {
+    height: 100px;
+    padding-left: 0;
+
+    &__icon {
+      margin: 0;
+    }
+  }
+}
+
+</style>
