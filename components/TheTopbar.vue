@@ -1,6 +1,6 @@
 <template>
   <nav>
-    <v-toolbar app primary height="70px">
+    <v-app-bar primary height="70px">
       <v-spacer />
       <v-btn icon>
         <v-icon>mdi-magnify</v-icon>
@@ -21,7 +21,7 @@
       <v-btn text>
         UA
       </v-btn>
-    </v-toolbar>
+    </v-app-bar>
 
     <v-navigation-drawer
       v-model="drawer"
@@ -44,7 +44,7 @@
       <v-divider />
 
       <v-list>
-        <v-list-item v-for="(item, i) in navItems" :key="i" link :to="route" class="navItem">
+        <v-list-item v-for="item in navItems" :key="item.title" link :to="item.route" class="navItem">
           <v-list-item-icon>
             <v-icon v-if="item.icon">
               {{ item.icon }}
@@ -108,23 +108,23 @@ export default {
           title: 'Товары',
           route: '/products',
           options: [
-            { title: 'Шпаклевка', route: '/products/putty' },
-            { title: 'Краска', route: '/products/paint' },
-            { title: 'Лак', route: '/products/varnish' }
+            { title: 'Шпаклевка', route: '/products?category=putty' },
+            { title: 'Краска', route: '/products?category=paint' },
+            { title: 'Лак', route: '/products?category=varnish' }
           ]
         },
         { icon: 'mdi-account-supervisor', title: 'О нас', route: '/about' },
-        { icon: 'mdi-palette', title: 'Палитра цветов', route: '/about' },
+        { icon: 'mdi-palette', title: 'Палитра цветов', route: '/about1' },
         {
           icon: 'mdi-calculator-variant',
           title: 'Калькулятор',
-          route: '/about'
+          route: '/about3'
         },
         { icon: 'mdi-contacts', title: 'Контакты', route: '/contacts' },
         {
           icon: 'mdi-map-marker-right',
           title: 'Как нас найти',
-          route: '/contacts'
+          route: '/contacts2'
         }
       ],
       contactItems: [

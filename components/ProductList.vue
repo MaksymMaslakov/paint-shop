@@ -24,6 +24,7 @@
 <script>
 export default {
   data: () => ({
+    selectedItem: 0,
     products: [
       {
         id: '1',
@@ -106,7 +107,18 @@ export default {
             going to do his laundry? I've got to find a way to escape.`
       }
     ]
-  })
+  }),
+  watch: {
+    selectedItem () {
+      console.log(this.selectedItem)
+    }
+  },
+  mounted () {
+    this.selectedItem = this.products.indexOf((product) => {
+      console.log(product.id, ' ?= ', this.$route.params.id)
+      return product.id === this.$route.params.id
+    })
+  }
 }
 </script>
 
